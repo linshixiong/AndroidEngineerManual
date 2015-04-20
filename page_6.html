@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o = 
+"urn:schemas-microsoft-com:office:office"><HEAD><TITLE>新主题</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17728"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>MTK平台软件编译及客制化方法</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>新主题</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap><STRONG><FONT 
+      face=微软雅黑>MTK平台软件编译及客制化方法</FONT></STRONG></TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1><FONT face=微软雅黑>Topic 1</FONT></H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN><STRONG><FONT 
+face=微软雅黑>&nbsp;</FONT></STRONG></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN><SPAN><A 
+href="https://source.android.com/source/initializing.html"><SPAN class=15 
+style="TEXT-DECORATION: underline; FONT-FAMILY: 宋体; COLOR: rgb(0,0,255); mso-spacerun: 'yes'; text-underline: single"><FONT 
+size=5 
+face=微软雅黑>https://source.android.com/source/initializing.html</FONT></SPAN></A></SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">The&nbsp;Android&nbsp;build&nbsp;is&nbsp;routinely&nbsp;tested&nbsp;in&nbsp;house&nbsp;on&nbsp;recent&nbsp;versions&nbsp;of&nbsp;Ubuntu&nbsp;LTS&nbsp;(14.04),&nbsp;but&nbsp;most&nbsp;distributions&nbsp;should&nbsp;have&nbsp;the&nbsp;required&nbsp;build&nbsp;tools&nbsp;available.&nbsp;Reports&nbsp;of&nbsp;successes&nbsp;or&nbsp;failures&nbsp;on&nbsp;other&nbsp;distributions&nbsp;are&nbsp;welcome.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Installing&nbsp;the&nbsp;JDK</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">The&nbsp;master&nbsp;branch&nbsp;of&nbsp;Android&nbsp;in&nbsp;the&nbsp;Android&nbsp;Open&nbsp;Source&nbsp;Project&nbsp;(AOSP)&nbsp;requires&nbsp;Java&nbsp;7.&nbsp;On&nbsp;Ubuntu,&nbsp;use&nbsp;OpenJDK.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Java&nbsp;7:&nbsp;For&nbsp;the&nbsp;latest&nbsp;version&nbsp;of&nbsp;Android</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;sudo&nbsp;apt-get&nbsp;update</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;sudo&nbsp;apt-get&nbsp;install&nbsp;openjdk-7-jdk</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Optionally,&nbsp;update&nbsp;the&nbsp;default&nbsp;Java&nbsp;version&nbsp;by&nbsp;running:</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;sudo&nbsp;update-alternatives&nbsp;--config&nbsp;java</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;sudo&nbsp;update-alternatives&nbsp;--config&nbsp;javac</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">If&nbsp;you&nbsp;encounter&nbsp;version&nbsp;errors&nbsp;for&nbsp;Java,&nbsp;set&nbsp;its&nbsp;path&nbsp;as&nbsp;described&nbsp;in&nbsp;the&nbsp;Wrong&nbsp;Java&nbsp;Version&nbsp;section.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">To&nbsp;develop&nbsp;older&nbsp;versions&nbsp;of&nbsp;Android,&nbsp;download&nbsp;and&nbsp;install&nbsp;the&nbsp;corresponding&nbsp;version&nbsp;of&nbsp;the&nbsp;Java&nbsp;JDK:</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Java&nbsp;6:&nbsp;for&nbsp;Gingerbread&nbsp;through&nbsp;KitKat</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Note:&nbsp;The&nbsp;lunch&nbsp;command&nbsp;in&nbsp;the&nbsp;build&nbsp;step&nbsp;will&nbsp;ensure&nbsp;that&nbsp;the&nbsp;Sun&nbsp;JDK&nbsp;is&nbsp;used&nbsp;instead&nbsp;of&nbsp;any&nbsp;previously&nbsp;installed&nbsp;JDK.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Installing&nbsp;required&nbsp;packages&nbsp;(Ubuntu&nbsp;14.04)</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">You&nbsp;will&nbsp;need&nbsp;a&nbsp;64-bit&nbsp;version&nbsp;of&nbsp;Ubuntu.&nbsp;Ubuntu&nbsp;14.04&nbsp;is&nbsp;recommended.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;sudo&nbsp;apt-get&nbsp;install&nbsp;bison&nbsp;g++-multilib&nbsp;git&nbsp;gperf&nbsp;libxml2-utils&nbsp;make&nbsp;zlib1g-dev:i386&nbsp;zip</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">三、固件编译方法</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">https://source.android.com/source/building-running.html</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">1、编译初始化设置</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Initialize</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Initialize&nbsp;the&nbsp;environment&nbsp;with&nbsp;the&nbsp;envsetup.sh&nbsp;script.&nbsp;Note&nbsp;that&nbsp;replacing&nbsp;source&nbsp;with&nbsp;.&nbsp;(a&nbsp;single&nbsp;dot)&nbsp;saves&nbsp;a&nbsp;few&nbsp;characters,&nbsp;and&nbsp;the&nbsp;short&nbsp;form&nbsp;is&nbsp;more&nbsp;commonly&nbsp;used&nbsp;in&nbsp;documentation.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;source&nbsp;build/envsetup.sh</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">or</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;.&nbsp;build/envsetup.sh</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Choose&nbsp;a&nbsp;Target</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Choose&nbsp;which&nbsp;target&nbsp;to&nbsp;build&nbsp;with&nbsp;lunch.&nbsp;The&nbsp;exact&nbsp;configuration&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;an&nbsp;argument.&nbsp;For&nbsp;example,&nbsp;the&nbsp;following&nbsp;command:</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;lunch&nbsp;aosp_arm-eng</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">refers&nbsp;to&nbsp;a&nbsp;complete&nbsp;build&nbsp;for&nbsp;the&nbsp;emulator,&nbsp;with&nbsp;all&nbsp;debugging&nbsp;enabled.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">If&nbsp;run&nbsp;with&nbsp;no&nbsp;arguments&nbsp;lunch&nbsp;will&nbsp;prompt&nbsp;you&nbsp;to&nbsp;choose&nbsp;a&nbsp;target&nbsp;from&nbsp;the&nbsp;menu.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">All&nbsp;build&nbsp;targets&nbsp;take&nbsp;the&nbsp;form&nbsp;BUILD-BUILDTYPE,&nbsp;where&nbsp;the&nbsp;BUILD&nbsp;is&nbsp;a&nbsp;codename&nbsp;referring&nbsp;to&nbsp;the&nbsp;particular&nbsp;feature&nbsp;combination.&nbsp;Here's&nbsp;a&nbsp;partial&nbsp;list:</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Build&nbsp;name</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Device</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Notes</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">aosp_arm</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">ARM&nbsp;emulator</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">AOSP,&nbsp;fully&nbsp;configured&nbsp;with&nbsp;all&nbsp;languages,&nbsp;apps,&nbsp;input&nbsp;methods</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">aosp_maguro</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">maguro</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">AOSP,&nbsp;running&nbsp;on&nbsp;Galaxy&nbsp;Nexus&nbsp;GSM/HSPA+&nbsp;("maguro")</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">aosp_panda</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">panda</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">AOSP,&nbsp;running&nbsp;on&nbsp;PandaBoard&nbsp;("panda")</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">and&nbsp;the&nbsp;BUILDTYPE&nbsp;is&nbsp;one&nbsp;of&nbsp;the&nbsp;following:</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p><FONT 
+size=5 face=微软雅黑>&nbsp;</FONT></o:p></SPAN></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Buildtype</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Use</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">user</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">limited&nbsp;access;&nbsp;suited&nbsp;for&nbsp;production</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">userdebug</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">like&nbsp;"user"&nbsp;but&nbsp;with&nbsp;root&nbsp;access&nbsp;and&nbsp;debuggability;&nbsp;preferred&nbsp;for&nbsp;debugging</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">eng</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"> 
+</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">development&nbsp;configuration&nbsp;with&nbsp;additional&nbsp;debugging&nbsp;tools</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P>
+<P class=MsoNormal><FONT face=微软雅黑><FONT size=5><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">For&nbsp;more&nbsp;information&nbsp;about&nbsp;building&nbsp;for&nbsp;and&nbsp;running&nbsp;on&nbsp;actual&nbsp;hardware,&nbsp;see&nbsp;Building&nbsp;for&nbsp;Devices.</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></FONT></FONT></P><!--EndFragment--></DIV>
+<DIV id=nstext><FONT face=微软雅黑>
+<HR>
+</FONT></DIV>
+<DIV class=footer>
+<P><STRONG><FONT face=微软雅黑>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy;2015 
+</FONT></STRONG><A href="http://digi.emdoor.com/" target=_blank><STRONG><FONT 
+color=#0066cc face=微软雅黑>亿道数码技术有限公司</FONT></STRONG></A><STRONG><FONT face=微软雅黑>. 
+All Rights Reserved. </FONT></STRONG></P></DIV>
+<P>
+<HR>
+
+<P></P></DIV>
+<DIV class=footer>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy;2015 <A 
+href="http://digi.emdoor.com/" target=_blank>亿道数码技术有限公司</A>. All Rights 
+Reserved. </P></DIV></BODY></HTML>

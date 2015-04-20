@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o = 
+"urn:schemas-microsoft-com:office:office"><HEAD><TITLE>编译初始化设置</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17728"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>MTK平台软件编译及客制化方法</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>编译初始化设置</H1></DIV></DIV>
+<DIV id=nstext>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">一、Android标准编译系统初始化方法</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">1、执行编译初始化脚本</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">在MTK平台，Android 
+Lollipop版本中使用了标准Android编译流程，</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">在通过终端连接到Ubnutu系统需要先进行编译初始化设置，具体操作为</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">1、进入Android系统代码根目录(具体目录名称请根据实际替换)</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$ 
+cd&nbsp;source_directory </SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">2、执行初始化脚本</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;source&nbsp;build/envsetup.sh</SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">或</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$&nbsp;.&nbsp;build/envsetup.sh</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">执行后如果终端打印类似以下内容并且无error提示为成功</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">including 
+device/generic/mini-emulator-arm64/vendorsetup.sh<BR>including 
+device/generic/mini-emulator-x86_64/vendorsetup.sh<BR>including 
+device/generic/mini-emulator-x86/vendorsetup.sh<BR>including 
+device/generic/mini-emulator-mips/vendorsetup.sh<BR>including 
+device/generic/mini-emulator-armv7-a-neon/vendorsetup.sh<BR>including 
+device/pskyed/em_t8116_nand_lvds/vendorsetup.sh<BR>including 
+device/pskyed/em_t8512_nand/vendorsetup.sh<BR>including 
+device/pskyed/RCT6773W22B/vendorsetup.sh<BR>including 
+device/pskyed/em_t8611_nand_lvds/vendorsetup.sh<BR>including 
+device/pskyed/RCT6203W46_MLC/vendorsetup.sh<BR>including 
+device/pskyed/pskyed8127_tb_c_l/vendorsetup.sh<BR>including 
+device/pskyed/RCT6303W87DK/vendorsetup.sh<BR>including 
+device/pskyed/em_t8370_emmc/vendorsetup.sh<BR>including 
+device/pskyed/NS_P16AT10/vendorsetup.sh<BR>including 
+device/pskyed/em_t8511_emmc/vendorsetup.sh<BR>including 
+device/pskyed/em_t8992_nand/vendorsetup.sh<BR>including 
+device/pskyed/RCT6203W46L/vendorsetup.sh<BR>including 
+device/pskyed/em_t8778_emmc/vendorsetup.sh<BR>including 
+device/pskyed/EM8611_EMMC/vendorsetup.sh<BR>including 
+device/pskyed/em_t8370_nand/vendorsetup.sh<BR>including 
+device/pskyed/W109G/vendorsetup.sh<BR>including 
+device/pskyed/em_t8511a_nand/vendorsetup.sh</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">.....</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">2、选择编译目标</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">上述初始化脚本执行成功后，使用lunch命令可以列出可以选择编译的版本类型，然后选择需要编译的版本的对应编号后按回车即可。</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">$ 
+lunch</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">You're 
+building on Linux</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Lunch 
+menu... pick a combo:<BR>&nbsp;&nbsp;&nbsp;&nbsp; 1. 
+aosp_arm-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 2. 
+aosp_arm64-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 3. 
+aosp_mips-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 4. 
+aosp_mips64-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 5. 
+aosp_x86-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 6. 
+aosp_x86_64-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 7. 
+mini_emulator_arm64-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 8. 
+mini_emulator_x86_64-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 9. 
+mini_emulator_x86-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 10. 
+mini_emulator_mips-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 11. 
+mini_emulator_arm-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 12. 
+full_em_t8116_nand_lvds-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 13. 
+full_em_t8116_nand_lvds-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 14. 
+full_em_t8116_nand_lvds-user<BR>&nbsp;&nbsp;&nbsp;&nbsp; 15. 
+em_t8512_nand-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 16. 
+em_t8512_nand-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 17. 
+em_t8512_nand-user<BR>&nbsp;&nbsp;&nbsp;&nbsp; 18. 
+RCT6773W22B-eng<BR>&nbsp;&nbsp;&nbsp;&nbsp; 19. 
+RCT6773W22B-userdebug<BR>&nbsp;&nbsp;&nbsp;&nbsp; 20. 
+RCT6773W22B-user</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.....</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">Which 
+would you like? [aosp_arm-eng] 18</SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt">
+<P class=MsoNormal>终端输出以下信息表示lunch命令执行成功</P>
+<P 
+class=MsoNormal><BR>============================================<BR>PLATFORM_VERSION_CODENAME=REL<BR>PLATFORM_VERSION=5.0<BR>TARGET_PRODUCT=RCT6773W22B<BR>TARGET_BUILD_VARIANT=eng<BR>TARGET_BUILD_TYPE=release<BR>TARGET_BUILD_APPS=<BR>TARGET_ARCH=arm<BR>TARGET_ARCH_VARIANT=armv7-a-neon<BR>TARGET_CPU_VARIANT=cortex-a7<BR>TARGET_2ND_ARCH=<BR>TARGET_2ND_ARCH_VARIANT=<BR>TARGET_2ND_CPU_VARIANT=<BR>HOST_ARCH=x86_64<BR>HOST_OS=linux<BR>HOST_OS_EXTRA=Linux-3.16.0-23-generic-x86_64-with-Ubuntu-14.10-utopic<BR>HOST_BUILD_TYPE=release<BR>BUILD_ID=LRX21M<BR>OUT_DIR=out<BR>============================================</P>
+<P class=MsoNormal>&nbsp;</P>
+<P class=MsoNormal>&nbsp;</P>
+<P class=MsoNormal>二、MTK Android 4.4（Kitkat）版本编译系统区别</P>
+<P class=MsoNormal>在Android 
+4.4中，MTK对Android编译系统进行了大量的修改，修改后的编译操作与Android原生设计有较大区别，其中与本节内容相关的区别就是省去了上述编译初始化和lunch的过程，针对MTK 
+Android 4.4编译系统的详细使用方法后面内容会有介绍。</P>
+<P class=MsoNormal>&nbsp;</P>
+<P class=MsoNormal></SPAN><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 宋体; mso-spacerun: 'yes'; mso-font-kerning: 1.0000pt"></SPAN>&nbsp;</P></DIV>
+<DIV id=nstext>
+<HR>
+</DIV>
+<DIV class=footer>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy;2015 <A href="" target=_blank></A>. 
+All Rights Reserved. </P></DIV></BODY></HTML>
