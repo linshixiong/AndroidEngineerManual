@@ -1,0 +1,82 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o = 
+"urn:schemas-microsoft-com:office:office"><HEAD><title>编译初始化设置</title>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17728"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <P><FONT size=3><STRONG>一、Android标准编译系统初始化方法</STRONG></FONT></P>
+  <P><BR><FONT size=2><STRONG>1、执行编译初始化脚本</STRONG></FONT></P>
+  <P><FONT size=2>在MTK平台，Android 
+  Lollipop版本中使用了标准Android编译流程，在通过终端连接到Ubnutu系统需要先进行编译初始化设置，具体操作为</FONT></P>
+  <P><BR><FONT size=2>1、进入Android系统代码根目录(具体目录名称请根据实际替换)</FONT></P>
+  <P><FONT size=2>$ cd source_directory </FONT></P>
+  <P><FONT size=2></FONT>&nbsp;</P>
+  <P><FONT size=2><STRONG>2、执行初始化脚本</STRONG></FONT></P>
+  <P><BR><FONT size=2>$ source build/envsetup.sh</FONT></P>
+  <P><FONT size=2>或</FONT></P>
+  <P><FONT size=2>$ . build/envsetup.sh</FONT></P>
+  <P><BR><FONT size=2>执行后如果终端打印类似以下内容并且无error提示为成功</FONT></P>
+  <P><FONT size=2> 
+  <TABLE style="WIDTH: 700px; BORDER-COLLAPSE: collapse; HEIGHT: 38px" border=1 
+  cellSpacing=0 borderColor=#000000 cellPadding=10 width=700 bgColor=#efefef 
+  > 
+  <TR> 
+  <TD> 
+  <FONT size=2>including 
+  device/generic/mini-emulator-arm64/vendorsetup.sh<BR>including 
+  device/generic/mini-emulator-x86_64/vendorsetup.sh<BR>including 
+  device/generic/mini-emulator-x86/vendorsetup.sh<BR>including 
+  device/generic/mini-emulator-mips/vendorsetup.sh<BR>including 
+  device/generic/mini-emulator-armv7-a-neon/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8116_nand_lvds/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8512_nand/vendorsetup.sh<BR>including 
+  device/pskyed/RCT6773W22B/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8611_nand_lvds/vendorsetup.sh<BR>including 
+  device/pskyed/RCT6203W46_MLC/vendorsetup.sh<BR>including 
+  device/pskyed/pskyed8127_tb_c_l/vendorsetup.sh<BR>including 
+  device/pskyed/RCT6303W87DK/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8370_emmc/vendorsetup.sh<BR>including 
+  device/pskyed/NS_P16AT10/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8511_emmc/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8992_nand/vendorsetup.sh<BR>including 
+  device/pskyed/RCT6203W46L/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8778_emmc/vendorsetup.sh<BR>including 
+  device/pskyed/EM8611_EMMC/vendorsetup.sh<BR>including 
+  device/pskyed/em_t8370_nand/vendorsetup.sh<BR>including 
+  device/pskyed/W109G/vendorsetup.sh<BR>including 
+        device/pskyed/em_t8511a_nand/vendorsetup.sh<BR><FONT size=2>.....</FONT></FONT></TD></TR></TABLE></FONT></P>
+  <P><FONT size=2></FONT>&nbsp;</P>
+  <P><BR><FONT size=2><STRONG>3、选择编译目标</STRONG></FONT></P>
+  <P><FONT size=2>上述初始化脚本执行成功后，使用lunch命令可以列出可以选择编译的版本类型，然后选择需要编译的版本的对应编号后按回车即可。</FONT></P>
+  <P><FONT size=2>
+  <TABLE style="WIDTH: 700px; BORDER-COLLAPSE: collapse; HEIGHT: 38px" border=1 
+  cellSpacing=0 borderColor=#000000 cellPadding=10 width=700 bgColor=#efefef 
+  >
+    
+    <TR>
+      <TD><FONT size=2>
+  <P><FONT size=2>$ lunch </FONT></P>
+  <P><FONT size=2>You're building on Linux </FONT></P>
+  <P><FONT size=2>Lunch menu... pick a combo:<BR>1. aosp_arm-eng<BR>2. 
+  aosp_arm64-eng<BR>3. aosp_mips-eng<BR>4. aosp_mips64-eng<BR>5. 
+  aosp_x86-eng<BR>6. aosp_x86_64-eng<BR>7. mini_emulator_arm64-userdebug<BR>8. 
+  mini_emulator_x86_64-userdebug<BR>9. mini_emulator_x86-userdebug<BR>10. 
+  mini_emulator_mips-userdebug<BR>11. mini_emulator_arm-userdebug<BR>12. 
+  full_em_t8116_nand_lvds-eng<BR>13. full_em_t8116_nand_lvds-userdebug<BR>14. 
+  full_em_t8116_nand_lvds-user<BR>15. em_t8512_nand-eng<BR>16. 
+  em_t8512_nand-userdebug<BR>17. em_t8512_nand-user<BR>18. 
+  RCT6773W22B-eng<BR>19. RCT6773W22B-userdebug<BR>20. RCT6773W22B-user 
+  </FONT></P>
+  <P><FONT size=2>.....</FONT></P>
+  <P><BR><FONT size=2>Which would you like? [aosp_arm-eng] 18 </FONT></P></FONT></TD></TR></TABLE></FONT></P>
+  <P>
+  <P><FONT size=2>      </FONT></P><BR><FONT size=2>终端输出以下信息表示lunch命令执行成功</FONT></P>
+  <P><FONT size=2></FONT>&nbsp;</P>
+  <P><FONT size=2>============================================<BR>PLATFORM_VERSION_CODENAME=REL<BR>PLATFORM_VERSION=5.0<BR>TARGET_PRODUCT=RCT6773W22B<BR>TARGET_BUILD_VARIANT=eng<BR>TARGET_BUILD_TYPE=release<BR>TARGET_BUILD_APPS=<BR>TARGET_ARCH=arm<BR>TARGET_ARCH_VARIANT=armv7-a-neon<BR>TARGET_CPU_VARIANT=cortex-a7<BR>TARGET_2ND_ARCH=<BR>TARGET_2ND_ARCH_VARIANT=<BR>TARGET_2ND_CPU_VARIANT=<BR>HOST_ARCH=x86_64<BR>HOST_OS=linux<BR>HOST_OS_EXTRA=Linux-3.16.0-23-generic-x86_64-with-Ubuntu-14.10-utopic<BR>HOST_BUILD_TYPE=release<BR>BUILD_ID=LRX21M<BR>OUT_DIR=out<BR>============================================</FONT></P>
+  <P><FONT size=2></FONT>&nbsp;</P>
+  <P><FONT size=2><FONT size=3><STRONG>二、MTK Android 4.4（Kitkat）版本编译系统区别</STRONG></FONT>   </FONT></P>
+  <P><FONT size=2>在Android 
+  4.4中，MTK对Android编译系统进行了大量的修改，修改后的编译操作与Android原生设计有较大区别，其中与本节内容相关的区别就是省去了上述编译初始化和lunch的过程，针对MTK 
+  Android 4.4编译系统的详细使用方法后面内容会有介绍。 <BR></FONT></P></BLOCKQUOTE></BODY></HTML>

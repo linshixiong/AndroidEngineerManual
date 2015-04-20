@@ -1,0 +1,204 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><title>代码管理及版本控制</title>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17728"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY >
+
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2><STRONG>一、首次使用Git</STRONG></FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>在首次使用Git获取所需代码前需要进行以下操作以设置Git权限和用户信息</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>1、获取用于Git连接认证SSH密钥文件，此文件由负责Git远程仓库管理同事创建并提供</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>2、使用终端工具（建议使用Xshell或putty）连接到编译服务器</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>3、拷贝SSH密钥文件到~/.ssh/git_key.pub，如无此目录则自行创建</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>   4、修改SSH密钥文件权限</FONT><FONT size=2> 
+    </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr> 
+    </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+  <TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width="500" bgColor=#efefef border=1 
+ >
+    
+    <TR>
+      <TD><FONT size=2>$ chmod 600 
+        ~/.ssh/git_key.pub  
+       </FONT></TD></TR></TABLE> 
+    </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>5、为Git SSH连接创建配置文件~/.ssh/config，参考配置文件内容如下</FONT> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT style="BACKGROUND-COLOR: #fffbf0"> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT> 
+  </DIV></FONT>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+  <TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width="500" bgColor=#efefef border=1 
+ >
+    
+    <TR>
+      <TD><FONT size=2>host 
+  git<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user 
+  emdoor<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hostname 
+  192.168.0.214<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        identityfile ~/.ssh/git_key.pub</FONT></TD></TR></TABLE> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>6、配置Git用户信息</FONT> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>
+  <TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width="500" bgColor=#efefef border=1 
+ >
+    
+    <TR>
+      <TD><FONT size=2>$ git 
+    config --global user.name&nbsp; “你的姓名”</FONT>
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2 bgcolor="#F3F3F3">$ git 
+    config --global user.email&nbsp; “你的电子邮件地址”</FONT>    
+    </DIV></TD></TR></TABLE></FONT></DIV>
+  <BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr>    
+    </DIV></BLOCKQUOTE>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2><STRONG>二、使用Git clone命令获取代码</STRONG></FONT> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>1、跟同事获得所需代码的git仓库路径，例如MT8127 Android 
+  5.0当前Git仓库路径为git:mt8127_lo_0205</FONT>  
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>  
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>  
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>   2、克隆代码</FONT>  
+   </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+  <TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width="500" bgColor=#efefef border=1 
+ >
+    
+    <TR>
+      <TD>
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>$ git clone git:mt8127_lo_0205</FONT>    
+    </DIV></TD></TR></TABLE>  
+   </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2><STRONG>三、更新代码</STRONG></FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>在修改代码或编译固件前建议将本地代码保持与远程仓库同步，具体操作为：</FONT></DIV><FONT size=2>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width=500 bgColor=#efefef border=1 
+ >
+  <TR >
+  <TD >
+    
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+      <FONT size=2 >
+    $ git pull origin master<FONT size=3> 
+        </FONT></FONT></DIV></TD> 
+    </TR>   </TABLE></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>&nbsp;</DIV></FONT>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>   
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>上述命令表示将master分支与origin远程仓库同步，如果当前使用其他分支或远程仓库请自行修改命令参数，如果当前只有一个分支及远程仓库，可将上述命令简化为：</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2><TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width=500 bgColor=#efefef border=1 
+ >
+  <TR >
+  <TD >
+    
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+      <FONT size=2 >
+      $ git pull<FONT size=3> 
+        </FONT></FONT></DIV></TD> 
+    </TR>   </TABLE></FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr> </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2><STRONG>四、提交修改</STRONG></FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>我们可能修改、添加、删除代码文件或二进制文件，具体操作步骤有：</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>1、查看修改内容</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2><TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width=500 bgColor=#efefef border=1 
+ >
+  <TR >
+  <TD >
+    
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+      <FONT size=2 >
+       $ git&nbsp;status<FONT size=3> 
+        </FONT></FONT></DIV></TD> 
+    </TR>   </TABLE> 
+  </FONT> </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>git 
+  status命令可以查看当前目录修改的内容，此命令还可以查看指定目录的修改内容，如</FONT> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width=500 bgColor=#efefef border=1 
+ >
+  <TR >
+  <TD >
+    
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+      <FONT size=2 >
+    $ git status 
+    packages/apps/Settings</FONT></DIV></TD> 
+    </TR>   </TABLE></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>  
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>用于查看packages/apps/Settings下所有修改的内容</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>2、添加修改到缓冲区</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2><TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" borderColor=#000000 
+  cellSpacing=0 cellPadding=2 width=500 bgColor=#efefef border=1 
+ >
+  <TR >
+  <TD >
+    
+    <DIV style="MARGIN-RIGHT: 0px" dir=ltr>
+      <FONT size=2 >
+       $ git add 
+  -u</FONT></DIV></TD> 
+    </TR>   </TABLE></FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr>&nbsp;  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>git 
+  add packages/apps/Settings -u</FONT>  
+   </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>3、提交修改</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>git 
+  commit -m "对所修改的问题的说明"</FONT>   
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>4、同步到远程仓库</FONT></DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>git 
+  push origin master</FONT>   
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>此命令参数与git pull命令类似，如果当前仓库只包含一个分支和远程仓库，则可以简化为</FONT> 
+  </DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2></FONT>&nbsp;</DIV>
+  <DIV style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>git 
+  push</FONT> </DIV></BLOCKQUOTE></BODY></HTML>

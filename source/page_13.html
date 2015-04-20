@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o = "urn:schemas-microsoft-com:office:office"><HEAD><title>Android系统编译环境配置方法</title>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17728"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P><FONT size=2>根据Google Android官方资料，Android 
+  Lollipop建议编译环境为Ubuntu 14.04 LTS 64bit，另外12.04 LTS 64bit也仍在支持范围。 </FONT></P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2><STRONG><FONT size=3>一、Android Lollipop编译环境配置（需要获取sudo权限） 
+  <BR></FONT>1、安装JDK</STRONG><BR>Android Lollipop要求使用Open JDK 7为Java环境，安装方法: <BR>     </FONT></P><FONT size=2>
+<P><TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" border=1 cellSpacing=0 
+  borderColor=#000000 cellPadding=2 width=500 bgColor=#efefef><TR>
+<TD >
+<FONT size=2 >$ sudo apt-get 
+  update <BR>$ sudo apt-get install 
+      openjdk-7-jdk</FONT></TD></TR></TABLE></P>
+<P>&nbsp;</P></FONT><FONT size=2></FONT>
+<P><FONT size=2><STRONG>2、选择Java版本</STRONG><BR>如果你的Ubuntu安装了其他版本的Java环境，需要选择Open 
+  JDK 7&nbsp; (1.7.x)为默认Java环境，使用命令 </FONT></P>
+<P><FONT size=2><TABLE style="WIDTH: 500px; BORDER-COLLAPSE: collapse" border=1 cellSpacing=0 
+  borderColor=#000000 cellPadding=2 width=500 bgColor=#efefef><TR>
+<TD >
+<FONT size=2 >$ sudo update-alternatives --config java <BR>$ sudo update-alternatives --config 
+      javac</FONT></TD></TR></TABLE>  
+     </FONT></P>
+<P><FONT size=2>选择Java版本后使用如下命令检查Java版本 
+  </FONT></P>
+<P><TABLE style="WIDTH: 700px; BORDER-COLLAPSE: collapse" border=1 cellSpacing=0 
+  borderColor=#000000 cellPadding=2 width=700 bgColor=#efefef><TR>
+<TD >
+        <P>
+<FONT size=2 >  $ java 
+      -version</FONT></P>
+        <P>
+<FONT size=2 ><FONT size=2>java version "1.7.0_75"<BR>OpenJDK Runtime 
+  Environment (IcedTea 2.5.4) (7u75-2.5.4-1~utopic1)<BR>OpenJDK 64-Bit Server VM 
+  (build 24.75-b04, mixed mode) </FONT></P>
+<P><FONT size=2>$ javac -version <BR>javac 1.7.0_75 
+  </FONT></P></FONT></TD></TR></TABLE></P>
+<P>&nbsp;</P>
+<P><FONT size=2><STRONG>3、安装必备组件</STRONG><BR> 
+         Ubuntu 14.04 
+  LTS 64bit </FONT></P><FONT size=2> 
+           
+    </FONT></BLOCKQUOTE>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr><FONT size=2>
+<P><TABLE style="WIDTH: 700px; BORDER-COLLAPSE: collapse; HEIGHT: 38px" 
+  border=1 cellSpacing=0 borderColor=#000000 cellPadding=2 width=700 bgColor=#efefef 
+ ><TR>
+<TD >
+<FONT size=2 >$ sudo apt-get 
+        install bison g++-multilib git gperf libxml2-utils make zlib1g-dev:i386 
+      zip</FONT></TD></TR></TABLE>    <BR> 
+           
+   &nbsp; </FONT></P>
+<P><FONT size=2>  Ubuntu 12.04 
+  LTS 64bit 
+  </FONT></P>
+<P><FONT size=2><TABLE style="WIDTH: 700px; BORDER-COLLAPSE: collapse; HEIGHT: 38px" 
+  border=1 cellSpacing=0 borderColor=#000000 cellPadding=10 width=700 bgColor=#efefef 
+ ><TR>
+<TD >
+<FONT size=2 >    
+      </FONT></TD></TR></TABLE>    <BR>$ sudo apt-get 
+  install git gnupg flex bison gperf build-essential zip curl libc6-dev 
+  libncurses5-dev:i386 x11proto-core-dev libx11-dev:i386 libreadline6-dev:i386 
+  libgl1-mesa-dri:i386 libgl1-mesa-dev g++-multilib mingw32 tofrodos 
+  python-markdown libxml2-utils xsltproc zlib1g-dev:i386<BR>$ sudo ln -s 
+  /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so 
+  </FONT></P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2><STRONG><FONT size=3>二、Android Kitkat编译环境配置</FONT>  <BR></STRONG>安装Oracle JDK,编译Android 4.4不能用OpenJDK，必须用Oracle JDK1.6，JDK 
+  1.6安装及配置请参考下一节《JDK安装及环境变量配置方法》。</FONT></P>
+<P><FONT size=2></FONT>&nbsp;</P></BLOCKQUOTE></BODY></HTML>
