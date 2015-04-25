@@ -6,4 +6,161 @@
 <title>Git常用命令参考</title>
 <LINK rel="stylesheet" href="_template.css"></HEAD>
 <BODY>
-<P>&nbsp;</P></BODY></HTML>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P><FONT size=2>初始化配置<BR>C代码&nbsp; 
+  收藏代码<BR>#配置使用git仓库的人员姓名&nbsp; <BR>git config --global user.name "Your Name 
+  Comes Here"&nbsp; <BR>&nbsp; <BR>#配置使用git仓库的人员email&nbsp; <BR>git config 
+  --global user.email </FONT><A href="mailto:you@yourdomain.example.com"><FONT size=2>you@yourdomain.example.com</FONT></A><FONT size=2>&nbsp; <BR>&nbsp; 
+  <BR>#配置到缓存 默认15分钟&nbsp; <BR>git config --global credential.helper 
+  cache&nbsp;&nbsp; <BR>&nbsp; <BR>#修改缓存时间&nbsp; <BR>git config --global 
+  credential.helper 'cache --timeout=3600'&nbsp;&nbsp;&nbsp; <BR>&nbsp; <BR>git 
+  config --global color.ui true&nbsp; <BR>git config --global alias.co 
+  checkout&nbsp; <BR>git config --global alias.ci commit&nbsp; <BR>git config 
+  --global alias.st status&nbsp; <BR>git config --global alias.br branch&nbsp; 
+  <BR>git config --global core.editor "mate -w"&nbsp;&nbsp;&nbsp; # 
+  设置Editor使用textmate&nbsp; <BR>git config -1 #列举所有配置&nbsp; <BR>&nbsp; 
+  <BR>#用户的git配置文件~/.gitconfig&nbsp; <BR>&nbsp; 
+  <BR>查看、添加、提交、删除、找回，重置修改文件<BR>C代码&nbsp; 收藏代码<BR>git help &lt;command&gt;&nbsp; 
+  # 显示command的help&nbsp; <BR>git 
+  show&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  显示某次提交的内容&nbsp; <BR>git show $id&nbsp; <BR>&nbsp;&nbsp; <BR>git co&nbsp; -- 
+  &lt;file&gt;&nbsp;&nbsp; # 抛弃工作区修改&nbsp; <BR>git co&nbsp; 
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 抛弃工作区修改&nbsp; 
+  <BR>&nbsp;&nbsp; <BR>git add &lt;file&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  将工作文件修改提交到本地暂存区&nbsp; <BR>git add 
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  将所有修改过的工作文件提交暂存区&nbsp; <BR>&nbsp;&nbsp; <BR>git rm 
+  &lt;file&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 从版本库中删除文件&nbsp; <BR>git rm 
+  &lt;file&gt; --cached&nbsp; # 从版本库中删除文件，但不删除文件&nbsp; <BR>&nbsp;&nbsp; <BR>git 
+  reset &lt;file&gt;&nbsp;&nbsp;&nbsp; # 从暂存区恢复到工作文件&nbsp; <BR>git reset -- 
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 从暂存区恢复到工作文件&nbsp; <BR>git reset 
+  --hard&nbsp;&nbsp;&nbsp; # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改&nbsp; <BR>&nbsp;&nbsp; 
+  <BR>git ci &lt;file&gt;&nbsp; <BR>git ci .&nbsp; <BR>git ci 
+  -a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 将git add, git 
+  rm和git ci等操作都合并在一起做&nbsp; <BR>git ci -am "some comments"&nbsp; <BR>git ci 
+  --amend&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 修改最后一次提交记录&nbsp; <BR>&nbsp;&nbsp; 
+  <BR>git revert &lt;$id&gt;&nbsp;&nbsp;&nbsp; # 
+  恢复某次提交的状态，恢复动作本身也创建了一次提交对象&nbsp; <BR>git revert HEAD&nbsp;&nbsp;&nbsp;&nbsp; # 
+  恢复最后一次提交的状态&nbsp; <BR>&nbsp;<BR>查看文件diff<BR>C代码&nbsp; 收藏代码<BR>git diff 
+  &lt;file&gt;&nbsp;&nbsp;&nbsp;&nbsp; # 比较当前文件和暂存区文件差异&nbsp; <BR>git diff&nbsp; 
+  <BR>git diff &lt;$id1&gt; &lt;$id2&gt;&nbsp;&nbsp; # 比较两次提交之间的差异&nbsp; <BR>git 
+  diff &lt;branch1&gt;..&lt;branch2&gt; # 在两个分支之间比较&nbsp; <BR>git diff 
+  --staged&nbsp;&nbsp; # 比较暂存区和版本库差异&nbsp; <BR>git diff --cached&nbsp;&nbsp; # 
+  比较暂存区和版本库差异&nbsp; <BR>git diff --stat&nbsp;&nbsp;&nbsp;&nbsp; # 仅仅比较统计信息&nbsp; 
+  <BR>&nbsp; <BR>查看提交记录<BR>C代码&nbsp; 收藏代码<BR>git log&nbsp; <BR>git log 
+  &lt;file&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 查看该文件每次提交记录&nbsp; <BR>git log -p 
+  &lt;file&gt;&nbsp;&nbsp; # 查看每次详细修改内容的diff&nbsp; <BR>git log -p 
+  -2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 查看最近两次详细修改内容的diff&nbsp; <BR>git log 
+  --stat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #查看提交统计信息&nbsp; 
+  <BR>&nbsp;<BR>&nbsp;tig<BR>Mac上可以使用tig代替diff和log，brew install 
+  tig<BR>&nbsp;<BR>取得Git仓库<BR>C代码&nbsp; 收藏代码<BR>#初始化一个版本仓库&nbsp; <BR>git 
+  init&nbsp; <BR>&nbsp; <BR>#Clone远程版本库&nbsp; <BR>git clone </FONT><A 
+  href="mailto:git@xbc.me:wordpress.git"><FONT size=2>git@xbc.me:wordpress.git</FONT></A><FONT size=2>&nbsp; <BR>&nbsp; 
+  <BR>#添加远程版本库origin，语法为 git remote add [shortname] [url]&nbsp; <BR>git remote 
+  add origin </FONT><A href="mailto:git@xbc.me:wordpress.git"><FONT size=2>git@xbc.me:wordpress.git</FONT></A><FONT size=2>&nbsp; <BR>&nbsp; 
+  <BR>#查看远程仓库&nbsp; <BR>git remote -v&nbsp; <BR>&nbsp;<BR>提交你的修改<BR>C代码&nbsp; 
+  收藏代码<BR>#添加当前修改的文件到暂存区&nbsp; <BR>git add .&nbsp; <BR>&nbsp; 
+  <BR>#如果你自动追踪文件，包括你已经手动删除的，状态为Deleted的文件&nbsp; <BR>git add -u&nbsp; <BR>&nbsp; 
+  <BR>#提交你的修改&nbsp; <BR>git commit –m "你的注释"&nbsp; <BR>&nbsp; 
+  <BR>#推送你的更新到远程服务器,语法为 git push [远程名] [本地分支]:[远程分支]&nbsp; <BR>git push origin 
+  master&nbsp; <BR>&nbsp; <BR>#查看文件状态&nbsp; <BR>git status&nbsp; <BR>&nbsp; 
+  <BR>#跟踪新文件&nbsp; <BR>git add readme.txt&nbsp; <BR>&nbsp; 
+  <BR>#从当前跟踪列表移除文件，并完全删除&nbsp; <BR>git rm readme.txt&nbsp; <BR>&nbsp; 
+  <BR>#仅在暂存区删除，保留文件在当前目录，不再跟踪&nbsp; <BR>git rm –cached readme.txt&nbsp; 
+  <BR>&nbsp; <BR>#重命名文件&nbsp; <BR>git mv reademe.txt readme&nbsp; <BR>&nbsp; 
+  <BR>#查看提交的历史记录&nbsp; <BR>git log&nbsp; <BR>&nbsp; 
+  <BR>#修改最后一次提交注释的，利用–amend参数&nbsp; <BR>git commit --amend&nbsp; <BR>&nbsp; 
+  <BR>#忘记提交某些修改，下面的三条命令只会得到一个提交。&nbsp; <BR>git commit –m &amp;quot;add 
+  readme.txt&amp;quot;&nbsp; <BR>git add readme_forgotten&nbsp; <BR>git commit 
+  –amend&nbsp; <BR>&nbsp; <BR>#假设你已经使用git add .，将修改过的文件a、b加到暂存区&nbsp; <BR>&nbsp; 
+  <BR>#现在你只想提交a文件，不想提交b文件，应该这样&nbsp; <BR>git reset HEAD b&nbsp; <BR>&nbsp; 
+  <BR>#取消对文件的修改&nbsp; <BR>git checkout –- readme.txt&nbsp; 
+  <BR>&nbsp;<BR>查看、切换、创建和删除分支<BR>C代码&nbsp; 收藏代码<BR>git br 
+  -r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 查看远程分支&nbsp; 
+  <BR>git br &lt;new_branch&gt; # 创建新的分支&nbsp; <BR>git br 
+  -v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  查看各个分支最后提交信息&nbsp; <BR>git br --merged&nbsp;&nbsp;&nbsp;&nbsp; # 
+  查看已经被合并到当前分支的分支&nbsp; <BR>git br --no-merged&nbsp; # 查看尚未被合并到当前分支的分支&nbsp; 
+  <BR>&nbsp;&nbsp; <BR>git co &lt;branch&gt;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  切换到某个分支&nbsp; <BR>git co -b &lt;new_branch&gt; # 创建新的分支，并且切换过去&nbsp; <BR>git 
+  co -b &lt;new_branch&gt; &lt;branch&gt;&nbsp; # 基于branch创建新的new_branch&nbsp; 
+  <BR>&nbsp;&nbsp; <BR>git co 
+  $id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除&nbsp; <BR>git co $id -b 
+  &lt;new_branch&gt;&nbsp; # 把某次历史提交记录checkout出来，创建成一个分支&nbsp; <BR>&nbsp;&nbsp; 
+  <BR>git br -d &lt;branch&gt;&nbsp; # 删除某个分支&nbsp; <BR>git br -D 
+  &lt;branch&gt;&nbsp; # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)&nbsp; 
+  <BR>&nbsp;<BR>分支合并和rebase<BR>C代码&nbsp; 收藏代码<BR>git merge 
+  &lt;branch&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 将branch分支合并到当前分支&nbsp; <BR>git merge origin/master --no-ff&nbsp; # 
+  不要Fast-Foward合并，这样可以生成merge提交&nbsp; <BR>&nbsp;&nbsp; <BR>git rebase master 
+  &lt;branch&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 将master 
+  rebase到branch，相当于：&nbsp; <BR>git co &lt;branch&gt; &amp;&amp; git rebase 
+  master &amp;&amp; git co master &amp;&amp; git merge &lt;branch&gt;&nbsp; 
+  <BR>&nbsp;<BR>Git补丁管理(方便在多台机器上开发同步时用)<BR>C代码&nbsp; 收藏代码<BR>git diff &gt; 
+  ../sync.patch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 生成补丁&nbsp; 
+  <BR>git apply 
+  ../sync.patch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  打补丁&nbsp; <BR>git apply --check ../sync.patch&nbsp; #测试补丁能否成功&nbsp; 
+  <BR>&nbsp;<BR>Git暂存管理<BR>C代码&nbsp; 收藏代码<BR>git 
+  stash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 暂存&nbsp; <BR>git stash 
+  list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 列所有stash&nbsp; <BR>git stash 
+  apply&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 恢复暂存的内容&nbsp; <BR>git stash 
+  drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 删除暂存区&nbsp; <BR>&nbsp;<BR>Git远程分支管理<BR>C代码&nbsp; 收藏代码<BR>git 
+  pull&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 抓取远程仓库所有分支更新并合并到本地&nbsp; <BR>git pull 
+  --no-ff&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 抓取远程仓库所有分支更新并合并到本地，不要快进合并&nbsp; <BR>git fetch 
+  origin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 抓取远程仓库更新&nbsp; <BR>git merge 
+  origin/master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  将远程主分支合并到本地当前分支&nbsp; <BR>git co --track origin/branch&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 跟踪某个远程分支创建相应的本地分支&nbsp; <BR>git co -b &lt;local_branch&gt; 
+  origin/&lt;remote_branch&gt;&nbsp; # 基于远程分支创建本地分支，功能同上&nbsp; <BR>&nbsp;&nbsp; 
+  <BR>git 
+  push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # push所有分支&nbsp; <BR>git push origin 
+  master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  将本地主分支推到远程主分支&nbsp; <BR>git push -u origin 
+  master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)&nbsp; <BR>git push origin 
+  &lt;local_branch&gt;&nbsp;&nbsp; # 创建远程分支， origin是远程仓库名&nbsp; <BR>git push 
+  origin &lt;local_branch&gt;:&lt;remote_branch&gt;&nbsp; # 创建远程分支&nbsp; <BR>git 
+  push origin :&lt;remote_branch&gt;&nbsp; #先删除本地分支(git br -d 
+  &lt;branch&gt;)，然后再push删除远程分支&nbsp; <BR>&nbsp;<BR>基本的分支管理<BR>C代码&nbsp; 
+  收藏代码<BR>#创建一个分支&nbsp; <BR>git branch iss53&nbsp; <BR>&nbsp; 
+  <BR>#切换工作目录到iss53&nbsp; <BR>git chekcout iss53&nbsp; <BR>&nbsp; 
+  <BR>#将上面的命令合在一起，创建iss53分支并切换到iss53&nbsp; <BR>git chekcout –b iss53&nbsp; 
+  <BR>&nbsp; <BR>#合并iss53分支，当前工作目录为master&nbsp; <BR>git merge iss53&nbsp; 
+  <BR>&nbsp; <BR>#合并完成后，没有出现冲突，删除iss53分支&nbsp; <BR>git branch –d iss53&nbsp; 
+  <BR>&nbsp; <BR>#拉去远程仓库的数据，语法为 git fetch [remote-name]&nbsp; <BR>git 
+  fetch&nbsp; <BR>&nbsp; <BR>#fetch 会拉去最新的远程仓库数据，但不会自动到当前目录下，要自动合并&nbsp; <BR>git 
+  pull&nbsp; <BR>&nbsp; <BR>#查看远程仓库的信息&nbsp; <BR>git remote show origin&nbsp; 
+  <BR>&nbsp; <BR>#建立本地的dev分支追踪远程仓库的develop分支&nbsp; <BR>git checkout –b dev 
+  origin/develop&nbsp; <BR>&nbsp;<BR>Git远程仓库管理<BR>C代码&nbsp; 收藏代码<BR>git remote 
+  -v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 查看远程服务器地址和仓库名称&nbsp; <BR>git remote show 
+  origin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 
+  查看远程服务器仓库状态&nbsp; <BR>git remote add origin git@ 
+  github:robbin/robbin_site.git&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 添加远程仓库地址&nbsp; <BR>git remote set-url origin git@ 
+  github.com:robbin/robbin_site.git # 设置远程仓库地址(用于修改远程仓库地址)&nbsp; <BR>git remote 
+  rm &lt;repository&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 删除远程仓库&nbsp; 
+  <BR>&nbsp;<BR>创建远程仓库<BR>C代码&nbsp; 收藏代码<BR>git clone --bare robbin_site 
+  robbin_site.git&nbsp; # 用带版本的项目创建纯版本仓库&nbsp; <BR>scp -r my_project.git git@ 
+  git.csdn.net:~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 将纯仓库上传到服务器上&nbsp; 
+  <BR>&nbsp;&nbsp; <BR>mkdir robbin_site.git &amp;&amp; cd robbin_site.git 
+  &amp;&amp; git --bare init # 在服务器创建纯仓库&nbsp; <BR>git remote add origin git@ 
+  github.com:robbin/robbin_site.git&nbsp;&nbsp;&nbsp; # 设置远程仓库地址&nbsp; <BR>git 
+  push -u origin 
+  master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  # 客户端首次提交&nbsp; <BR>git push -u origin develop&nbsp; # 
+  首次将本地develop分支提交到远程develop分支，并且track&nbsp; <BR>&nbsp;&nbsp; <BR>git remote 
+  set-head origin master&nbsp;&nbsp; # 设置远程仓库的HEAD指向master分支&nbsp; 
+  <BR>&nbsp;<BR>也可以命令设置跟踪远程库和本地库<BR>C代码&nbsp; 收藏代码<BR>git branch --set-upstream 
+  master origin/master&nbsp; <BR>git branch --set-upstream develop 
+  origin/develop&nbsp; </FONT></P></BLOCKQUOTE></BODY></HTML>
