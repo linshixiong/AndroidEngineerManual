@@ -6,4 +6,83 @@
 <title>修改开机Logo</title>
 <LINK rel="stylesheet" href="_template.css"></HEAD>
 <BODY>
+<P>Android 4.4 开机Logo修改方法</P>
+<P>&nbsp;</P>
+<P>1、制作开机Logo 
+BMP图片，确保Logo分辨率与设备屏幕分辨率一致，包括uboot和kernel开机logo两幅图片，可以使用相同图片</P>
+<P>&nbsp;</P>
+<P>2、确定Logo文件目录</P>
+<P>打开mediatek/config/PROJECT/ProjectConfig.mk查找BOOT_LOGO配置</P>
+<P>例如：</P>
+<P>BOOT_LOGO=wsvganl</P>
+<P>则可见Logo文件目录为wsvganl</P>
+<P>&nbsp;</P>
+<P>3、使用新Logo文件替换以下文件</P>
+<P>&nbsp;mediatek/custom/PROJECT/lk/logo/wsvganl/wsvganl_uboot.bmp</P>
+<P>&nbsp;mediatek/custom/PROJECT/lk/logo/wsvganl/wsvganl_kernel.bmp</P>
+<P>注意，Logo文件存放路径和文件名以BOOT_LOGO配置内容为准。</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Android 5.0 开机Logo修改方法</P>
+<P>1、制作开机Logo 
+BMP图片，确保Logo分辨率与设备屏幕分辨率一致，包括uboot和kernel开机logo两幅图片，可以使用相同图片</P>
+<P>&nbsp;</P>
+<P>2、确定Logo文件目录</P>
+<P>打开bootable/bootloader/lk/project/PROJECT.mk查找BOOT_LOGO配置</P>
+<P>例如：</P>
+<P>BOOT_LOGO=wsvganl</P>
+<P>则可见Logo文件目录为wsvganl</P>
+<P>&nbsp;</P>
+<P>3、使用新Logo文件替换以下文件</P>
+<P>&nbsp;bootable/bootloader/lk/dev/logo/wsvganl/wsvganl_uboot.bmp</P>
+<P>&nbsp;bootable/bootloader/lk/dev/logo/wsvganl/wsvganl_kernel.bmp</P>
+<P>注意，Logo文件存放路径和文件名以BOOT_LOGO配置内容为准。</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Android 5.0中新建Logo目录的步骤</P>
+<P>&nbsp;</P>
+<P>由于MTK在Android 
+5.0中对客制化配置的支持不如以往版本，所以上述步骤修改开机Logo的方法会影响到公有代码，如果客制化项目采用与公版不同的Logo，建议采用以下方法创建客制化的Logo目录，以BOOT_LOGO= 
+ wsvganl的配置为例，具体步骤包括</P>
+<P> &nbsp;</P>
+<P> 1、复制共有代码为客制化代码</P>
+<P>$ cp cp bootable/bootloader/lk/dev/logo/wsvganl/&nbsp; 
+bootable/bootloader/lk/dev/logo/PROJECT -rf</P>
+<P> &nbsp;</P>
+<P>2.重命名Logo文件，将bootable/bootloader/lk/dev/logo/PROJECT下所有wsvganl_xxx.bmp文件重命名为PROJECT_xxx.bmp</P>
+<P> &nbsp;</P>
+<P> 3、替换客制化Logo文件</P>
+<P> 使用新Logo文件替换以下文件</P>
+<P>&nbsp;bootable/bootloader/lk/dev/logo/PROJECT/PROJECT_uboot.bmp</P>
+<P>&nbsp;bootable/bootloader/lk/dev/logo/PROJECT/PROJECT_kernel.bmp</P>
+<P> &nbsp;</P>
+<P> 4、修改BOOT_LOGO配置文件</P>
+<P> 修改以下文件</P>
+<P> mediatek/config/PROJECT/ProjectConfig.mk</P>
+<P> device/pskyed/PROJECT/ProjectConfig.mk</P>
+<P> &nbsp;</P>
+<P> 配置BOOT_LOGO= PROJECT</P>
+<P> &nbsp;</P>
+<P> 5、修改代码</P>
+<P> --- 
+a/bootable/bootloader/lk/lib/libshowlogo/cust_display.h<BR>+++ 
+b/bootable/bootloader/lk/lib/libshowlogo/cust_display.h<BR>@@ -430,7 +430,7 
+@@<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #define 
+BAR_RIGHT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+(338)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #define 
+BAR_BOTTOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+(360)<BR>&nbsp;<BR>-#elif defined(WSVGANL)<BR>+#elif defined(WSVGANL) || 
+defined(PROJECT)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // wsvganl 
+1024*600<BR>&nbsp;<BR> </P>
+<P><BR>--- 
+a/vendor/mediatek/proprietary/external/libshowlogo/cust_display.h<BR>+++ 
+b/vendor/mediatek/proprietary/external/libshowlogo/cust_display.h<BR>@@ -391,7 
++391,7 @@<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #define 
+BAR_RIGHT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+(338)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #define 
+BAR_BOTTOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+(360)<BR>&nbsp;<BR>-#elif defined(WSVGANL)<BR>+#elif defined(WSVGANL) || 
+defined(PROJECT)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // wsvganl 
+1024*600</P>
+<P>&nbsp;</P>
 <P>&nbsp;</P></BODY></HTML>

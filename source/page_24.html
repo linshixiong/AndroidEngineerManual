@@ -6,4 +6,18 @@
 <title>添加GMS服务包</title>
 <LINK rel="stylesheet" href="_template.css"></HEAD>
 <BODY>
-<P>&nbsp;</P></BODY></HTML>
+<P>GMS（Google Mobile 
+Service）服务包是Android系统中Google服务的扩展包，包括了Google产品的后台服务及应用程序，主要由各种apk、jar及so文件组成，这些文件在源码中的存放路径默认为<BR>vendor/google/</P>
+<P>&nbsp;</P>
+<P>主要的Makefile文件为vendor/google/products/gms.mk</P>
+<P>&nbsp;</P>
+<P>Android 4.4中添加GMS服务包的方法</P>
+<P>&nbsp;</P>
+<P>修复项目Projectconfig.mk文件修改配置</P>
+<P>mediatek/config/PROJECT/ProjectConfig.mk</P>
+<P>#编译GMS包</P>
+<P>BUILD_GMS=yes<BR></P>
+<P>#选择GMS包类型，可为full或mini，意为完整GMS服务或精简GMS服务<BR>BUILD_GMS_TYPE=full</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Android 5.0以上添加GMS服务的方法</P></BODY></HTML>

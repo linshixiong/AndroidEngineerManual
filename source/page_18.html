@@ -6,4 +6,74 @@
 <title>创建项目</title>
 <LINK rel="stylesheet" href="_template.css"></HEAD>
 <BODY>
-<P>&nbsp;</P></BODY></HTML>
+<P><FONT size=2>Android 4.4创建客制化项目步骤</FONT> </P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2>1、选择客制化项目的基础项目，即亿道公版项目，本文中以em_t8270_nand为例</FONT></P>
+<P><FONT size=2>2、复制以下文件及文件夹并重命名为新项目名称，本文中以“NEW_PROJECT”为例</FONT></P>
+<P><FONT size=2>$ cp 
+bootable/bootloader/lk/project/em_t8270_nand.mk&nbsp;&nbsp;&nbsp;&nbsp;bootable/bootloader/lk/project/NEW_PROJECT.mk</FONT></P>
+<P><FONT size=2>$ cp 
+build/target/product/em_t8270_nand.mk&nbsp; 
+build/target/product/NEW_PROJECT.mk</FONT></P>
+<P><FONT size=2>$ cp 
+build/target/product/security/em_t8270_nand/&nbsp; 
+build/target/product/security/NEW_PROJECT&nbsp; -rf</FONT></P>
+<P><FONT size=2>$ cp 
+mediatek/binary/packages/em_t8270_nand/&nbsp; 
+mediatek/binary/packages/NEW_PROJECT&nbsp; -rf</FONT></P>
+<P><FONT size=2>$ cp mediatek/config/em_t8270_nand/&nbsp; 
+mediatek/config/NEW_PROJECT&nbsp; -rf</FONT></P>
+<P><FONT size=2>$ cp mediatek/custom/em_t8270_nand/&nbsp; 
+mediatek/custom/NEW_PROJECT&nbsp;&nbsp;-rf</FONT></P>
+<P><FONT size=2>$ cp vendor/mediatek/em_t8270_nand/&nbsp; 
+vendor/mediatek/NEW_PROJECT&nbsp;&nbsp;&nbsp;-rf</FONT></P>
+<P><FONT size=2>$&nbsp;mv 
+vendor/mediatek/NEW_PROJECT/artifacts/out/target/product/em_t8270_nand/ 
+vendor/mediatek/NEW_PROJECT/artifacts/out/target/product/NEW_PROJECT</FONT></P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2>3、如果包含如下文件</FONT></P>
+<P><FONT size=2>mediatek/custom/NEW_PROJECT/kernel/Makefile</FONT></P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2>则文件内容</FONT></P>
+<P>include $(MTK_PATH_BUILD)/common.mk<BR>$(call 
+all-modules-src-or-makefile,$(obj),CUSTOM_KERNEL_)<BR>obj-n := dummy.o</P>
+<P>ifeq ($(MTK_ALPS_BOX_SUPPORT), yes)<BR>ccflags-y += 
+-DMTK_ALPS_BOX_SUPPORT<BR>endif</P>
+<P>ifeq ($(X680),yes)<BR>obj-y += 
+gsl_point_id.o<BR>$(obj)/gsl_point_id.o: 
+$(srctree)/../out/target/product/em_t8270_nan/obj/CUSTGEN/custom/kernel/touchpanel/gsl_point_id<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cp 
+$(srctree)/../out/target/product/em_t8270_nand/obj/CUSTGEN/custom/kernel/touchpanel/gsl_point_id 
+$(obj)/gsl_point_id.o<BR>endif</P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2>修改为：</FONT></P>
+<P>include $(MTK_PATH_BUILD)/common.mk<BR>$(call 
+all-modules-src-or-makefile,$(obj),CUSTOM_KERNEL_)<BR>obj-n := dummy.o</P>
+<P>ifeq ($(MTK_ALPS_BOX_SUPPORT), yes)<BR>ccflags-y += 
+-DMTK_ALPS_BOX_SUPPORT<BR>endif</P>
+<P>ifeq ($(X680),yes)<BR>obj-y += 
+gsl_point_id.o<BR>$(obj)/gsl_point_id.o: 
+$(srctree)/../out/target/product/<FONT size=2>NEW_PROJECT</FONT> 
+/obj/CUSTGEN/custom/kernel/touchpanel/gsl_point_id<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cp 
+$(srctree)/../out/target/product/<FONT size=2>NEW_PROJECT</FONT> 
+ 
+/obj/CUSTGEN/custom/kernel/touchpanel/gsl_point_id 
+$(obj)/gsl_point_id.o<BR>endif</P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2>Android 
+5.0/5.1创建客制化项目</FONT></P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2>Android 
+5.0/5.1可以使用create_project.sh脚本创建客制化项目，具体操作为</FONT></P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2> $./create_project.sh</FONT></P><FONT size=2>
+<P><BR>Enter new project name 
+&gt;&gt;<BR>NEW_PROJECT<BR>Based project &gt;&gt;<BR>em_t8270_nand<BR>Creating 
+project NEW_PROJECT based on em_t8270_nand ...<BR>Done!</P>
+<P>&nbsp;</P>
+<P> </FONT>&nbsp;</P>
+<P><FONT size=2></FONT>&nbsp;</P>
+<P><FONT size=2></FONT>&nbsp;</P></BODY></HTML>
